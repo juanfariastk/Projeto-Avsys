@@ -1,0 +1,25 @@
+ # Retorno de mensagens por códigos retornados pelo servidor-------------------------------------------------->>>>>
+Código 001 -> 'Servidor Aberto'
+Código 002 -> "Cliente desconectado"
+Código 003 -> "Comando OBTER"
+Código 004 -> "Comando VERIFICAR"
+Código OO5 -> "Comando COMPRAR chamado com sucesso!"
+Código 006 -> "Cadeira comprada com sucesso! Verifique a sua compra com o comando VERIFICAR ID"
+Código 007 -> "Saindo do servidor..."
+
+
+#Retorno de erros por códigos retornados pelo servidor----------------------------------------------------------------------------->>>>>>
+Código 101 -> Erro!!! Digite o comando corretamente!
+Código 102 - > Digite dados válidos!
+Código 103 -> ERROR: Avião inexistente ou inválido!
+Código 104 -> Erro!!! Digite o comando corretamente!
+Código 105 -> Digite dados válidos para realizar a verificação!
+Código 106 -> Faltou o ID para realizar a verificação!
+Código 107 -> Complete os parâmetros do comando corretamente!
+Código 108 -> Comando Inválido. Tente Novamente!
+Código 109 -> Assento já foi comprado!
+Código 110 -> ERROR! Este ID de compra não existe!
+Código 111 -> ERROR! Este ID do Avião não existe!
+Código 112 -> ERROR! Digite um ID de avião válido para verificar o assento!
+
+

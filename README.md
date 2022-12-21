@@ -11,13 +11,13 @@
   - Ticket
 
 ## &nbsp; Respostas Socket (Sucesso):
-  -001 -> Servidor Aberto
-  -002 -> Cliente Desconectado
-  -003 -> Comando Obter
-  -004 -> Comando Verificar
-  -005 -> Comando Comprar
-  -006 -> Cadeira comprada com sucesso! Verifique a sua compra com o comando VERIFICAR ID
-  -007 -> Saindo do Servidor...
+  - 001 -> Servidor Aberto
+  - 002 -> Cliente Desconectado
+  - 003 -> Comando Obter
+  - 004 -> Comando Verificar
+  - 005 -> Comando Comprar
+  - 006 -> Cadeira comprada com sucesso! Verifique a sua compra com o comando VERIFICAR ID
+  - 007 -> Saindo do Servidor...
  
  ## &nbsp; Respostas Socket (Erros):
   - Código 101 -> Erro!!! Digite o comando corretamente! 

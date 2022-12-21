@@ -2,7 +2,7 @@ import socket
 import sys
 
 #tupla ip/porta
-HOST = 'localhost' 
+HOST = '0.0.0.0' 
 PORT = 40000
 
 
@@ -21,8 +21,12 @@ def metodos_suportados(comando_atual):
 	else:
 		return False
 		
-if len(sys.argv) > 1:
+if len(sys.argv) == 2:
 	HOST = sys.argv[1]
+elif len(sys.argv) == 3:
+	PORT = int(sys.argv[2])
+	HOST = sys.argv[1]
+
 
 print('Servidor:', HOST+':'+str(PORT))
 
@@ -103,7 +107,7 @@ while True:
          `-'
 
  ''')
-			print("  Voo 1", "  Voo 2", "  Voo 3", "  Voo 4", "  Voo 5")
+			print()
 			dados = sock.recv(1024)
 			if dados.decode()=='104':
 				print('Erro! Argumento Inválido!')

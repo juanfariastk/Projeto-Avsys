@@ -15,7 +15,7 @@ Vendas = Vendas()
 mutex = threading.Semaphore(1)
 
 #dados para tupla porta/ip
-HOST = 'localhost'
+HOST = '0.0.0.0'
 PORT = 40000 
 
 #organização serv

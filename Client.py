@@ -106,7 +106,7 @@ while True:
 			print("  Voo 1", "  Voo 2", "  Voo 3", "  Voo 4", "  Voo 5")
 			dados = sock.recv(1024)
 			if dados.decode()=='104':
-				print('Erro! Digite o comando corretamente!')
+				print('Erro! Argumento Inválido!')
 			elif dados.decode()=='102':
 				print('Erro! Digite dados válidos!')
 			else:

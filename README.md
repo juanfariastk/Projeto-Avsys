@@ -36,3 +36,4 @@
   - Obter [arg1] = retorna os voos ou os ID de compras realizadas (arg1 = voos ou arg1 = id)
   - Verificar [arg1] [arg2] = retorna os dados de um voo, de uma compra ou os assentos disponíveis de um voo (arg1 = voo, arg1 = id ou arg1 = assentos) (arg2 = ID, arg2 = codigo do voo)
   - Comprar [arg1] [arg2] [arg3] = realiza a compra, porém verifica se o assento atual já não está ocupado (arg1 = nome do comprador) (arg2 = numero do assento) (arg3 = codigo do voo)
+  

@@ -12,8 +12,9 @@ Aeroporto.inserir_avioes()
 Vendas = Vendas()
 
 #mutex já setado
-mutex = threading.Semaphore(1)
-
+mutex_compra = threading.Semaphore(1)
+mutex_verificar =  threading.Semaphore(1)
+mutex_obter = threading.Semaphore(1)
 #dados para tupla porta/ip
 HOST = '0.0.0.0'
 PORT = 40000 
@@ -40,7 +41,7 @@ def envio_dados_cliente(msg, con_cli, cliente):
 	msg = msg.split()
 
 	if msg[0].lower() == 'obter':
-		mutex.acquire()
+		mutex_obter.acquire()
 		con_cli.send(str.encode('003'))
 		try:
 			if msg[1].lower() == 'voos' :
@@ -51,9 +52,9 @@ def envio_dados_cliente(msg, con_cli, cliente):
 				con_cli.send(str.encode('104'))
 		except ValueError:
 			con_cli.send(str.encode('102'))
-		mutex.release()
+		mutex_obter.release()
 	elif msg[0].lower() == 'verificar':
-		mutex.acquire()
+		mutex_verificar.acquire()
 		con_cli.send(str.encode('004'))
 		try:
 			if msg[1].lower()=='voo':
@@ -75,10 +76,10 @@ def envio_dados_cliente(msg, con_cli, cliente):
 			con_cli.send(str.encode('110'))
 		except AviaoException:
 			con_cli.send(str.encode('111'))
-		mutex.release()
+		mutex_verificar.release()
 	elif msg[0].lower() == 'comprar':
 		
-		mutex.acquire()
+		mutex_compra.acquire()
 		con_cli.send(str.encode('005'))
 		try:
 			comprar_cadeira(Aeroporto,Vendas, msg[1], int(msg[2]), msg[3])
@@ -88,7 +89,7 @@ def envio_dados_cliente(msg, con_cli, cliente):
 			con_cli.send(str.encode('109'))
 		except Exception:
 			con_cli.send(str.encode('107'))	
-		mutex.release()
+		mutex_compra.release()
 		
 	elif msg[0].lower() == 'quit':
 		con_cli.send(str.encode('007'))

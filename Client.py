@@ -91,7 +91,7 @@ while True:
 		if comando_atual[0].lower() == 'quit':
 			break
 		elif comando_atual[0].lower() == 'obter':
-			print('Voos disponíveis:')
+			print('Dados:')
 			print('''
 
  __  _

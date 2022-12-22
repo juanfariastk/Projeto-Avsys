@@ -40,6 +40,7 @@ def envio_dados_cliente(msg, con_cli, cliente):
 	msg = msg.split()
 
 	if msg[0].lower() == 'obter':
+		mutex.acquire()
 		con_cli.send(str.encode('003'))
 		try:
 			if msg[1].lower() == 'voos' :
@@ -50,7 +51,9 @@ def envio_dados_cliente(msg, con_cli, cliente):
 				con_cli.send(str.encode('104'))
 		except ValueError:
 			con_cli.send(str.encode('102'))
+		mutex.release()
 	elif msg[0].lower() == 'verificar':
+		mutex.acquire()
 		con_cli.send(str.encode('004'))
 		try:
 			if msg[1].lower()=='voo':
@@ -72,6 +75,7 @@ def envio_dados_cliente(msg, con_cli, cliente):
 			con_cli.send(str.encode('110'))
 		except AviaoException:
 			con_cli.send(str.encode('111'))
+		mutex.release()
 	elif msg[0].lower() == 'comprar':
 		
 		mutex.acquire()
